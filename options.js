@@ -21,6 +21,7 @@ function save_options() {
         WhiteList: document.getElementById('WhiteList').value,
         RedirectUrl: document.getElementById('RedirectUrl').value
     }, function() {
+        chrome.extension.getBackgroundPage().reloadOptions();
         var status = document.getElementById('status');
         status.textContent = 'Options saved!';
         setTimeout(function() {

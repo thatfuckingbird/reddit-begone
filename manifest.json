@@ -2,10 +2,10 @@
       "name": "reddit begone",
       "version": "1.0",
       "description": "Blocks cancer.",
-      "permissions": ["storage", "<all_urls>", "tabs", "notifications"],
+      "permissions": ["storage", "<all_urls>", "tabs", "webRequest", "webRequestBlocking"],
       "background": {
           "scripts": ["background.js"],
-          "persistent": false
+          "persistent": true
       },
       "options_page": "options.html",
       "icons": {
