@@ -16,6 +16,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+const blacklist = ['*://reddit.com/r/*','*://*.reddit.com/r/*', '*://reddit.com/', '*://old.reddit.com/', '*://www.reddit.com/', '*://reddit.com/user/*','*://*.reddit.com/user/*'];
 let whitelist;
 let redirUrl;
 
@@ -32,7 +33,7 @@ function reloadOptions() {
     });
 }
 
-chrome.webRequest.onBeforeRequest.addListener(onBeforeRequest, { urls: ['*://reddit.com/r/*','*://*.reddit.com/r/*'] }, ['blocking', 'extraHeaders'])
+chrome.webRequest.onBeforeRequest.addListener(onBeforeRequest, { urls: blacklist }, ['blocking', 'extraHeaders'])
 
 function onBeforeRequest(details) {
     if(checkUrlForCancer(details.url)) return { redirectUrl: redirUrl }
