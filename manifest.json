@@ -1,0 +1,20 @@
+  {
+      "name": "reddit begone",
+      "version": "1.0",
+      "description": "Blocks cancer.",
+      "permissions": ["storage", "<all_urls>", "tabs", "notifications"],
+      "background": {
+          "scripts": ["background.js"],
+          "persistent": false
+      },
+      "options_page": "options.html",
+      "icons": {
+          "200": "icon.png"
+      },
+      "browser_action": {
+          "default_icon": {
+              "200": "icon.png"
+          }
+      },
+      "manifest_version": 2
+  }
