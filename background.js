@@ -40,8 +40,6 @@ function onBeforeRequest(details) {
 }
 
 function checkUrlForCancer(url) {
-    console.log('checking url:'+url)
-    console.log(whitelist)
     for(let i = 0; i < whitelist.length; ++i) if(url.toLowerCase().indexOf("reddit.com/r/"+whitelist[i]) != -1) return false;
     return true;
 }
